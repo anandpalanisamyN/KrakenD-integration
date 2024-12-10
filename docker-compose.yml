@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  krakend:
+    image: devopsfaith/krakend:2.8.0
+    container_name: krakend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./krakend:/etc/krakend
+    command:
+    - run
+    - --debug
+    - -c
+    - /etc/krakend/krakend.json

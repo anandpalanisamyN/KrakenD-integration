@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "name": "Example API Gateway",
+  "port": 8080,
+  "timeout": "10000ms",
+  "endpoints": [
+    {
+      "endpoint": "/api/posts",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/posts",
+          "host": ["https://dummyjson.com"],
+          "extra_config": {
+            "proxy": {
+              "timeout": "10000ms"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/products",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/products",
+          "host": ["https://dummyjson.com"],
+          "extra_config": {
+            "proxy": {
+              "timeout": "10000ms"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
